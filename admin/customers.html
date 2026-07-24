@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customers | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>WQ Admin</h2>
+</div>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li>
+<i class="fa-solid fa-box"></i>
+Products
+</li>
+
+<li>
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+<li>
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li>
+<i class="fa-solid fa-envelope"></i>
+Messages
+</li>
+
+<li>
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li>
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="search">
+
+<input type="text" placeholder="Search Customers...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png" alt="Admin">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Page Title ================= -->
+
+<section class="page-title">
+
+<div>
+
+<h1>Customers</h1>
+
+<p>
+
+Manage all registered customers.
+
+</p>
+
+</div>
+
+<button class="primary-btn">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Customer
+
+</button>
+
+</section>
+
+<!-- ================= Customers Table ================= -->
+
+<section class="panel">
+
+<div class="panel-header">
+
+<h2>Customers List</h2>
+
+</div>
+
+<table class="products-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Orders</th>
+
+<th>Total Spent</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#1001</td>
+
+<td>Ahmed Ali</td>
+
+<td>ahmed@email.com</td>
+
+<td>+962790000001</td>
+
+<td>15</td>
+
+<td>$1,250</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1002</td>
+
+<td>Sarah Lee</td>
+
+<td>sarah@email.com</td>
+
+<td>+962790000002</td>
+
+<td>8</td>
+
+<td>$620</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1003</td>
+
+<td>John Smith</td>
+
+<td>john@email.com</td>
+
+<td>+962790000003</td>
+
+<td>3</td>
+
+<td>$180</td>
+
+<td>
+
+<span class="status pending">
+
+New
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+<tr>
+
+<td>#1004</td>
+
+<td>Michael Brown</td>
+
+<td>michael@email.com</td>
+
+<td>+962790000004</td>
+
+<td>21</td>
+
+<td>$2,430</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1005</td>
+
+<td>Emily Johnson</td>
+
+<td>emily@email.com</td>
+
+<td>+962790000005</td>
+
+<td>11</td>
+
+<td>$950</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1006</td>
+
+<td>David Wilson</td>
+
+<td>david@email.com</td>
+
+<td>+962790000006</td>
+
+<td>5</td>
+
+<td>$420</td>
+
+<td>
+
+<span class="status pending">
+
+New
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1007</td>
+
+<td>Ali Hassan</td>
+
+<td>ali@email.com</td>
+
+<td>+962790000007</td>
+
+<td>18</td>
+
+<td>$1,860</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1008</td>
+
+<td>Jessica White</td>
+
+<td>jessica@email.com</td>
+
+<td>+962790000008</td>
+
+<td>9</td>
+
+<td>$790</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1009</td>
+
+<td>Mohammed Saleh</td>
+
+<td>m.saleh@email.com</td>
+
+<td>+962790000009</td>
+
+<td>2</td>
+
+<td>$95</td>
+
+<td>
+
+<span class="status pending">
+
+New
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1010</td>
+
+<td>Lucas Martin</td>
+
+<td>lucas@email.com</td>
+
+<td>+962790000010</td>
+
+<td>14</td>
+
+<td>$1,540</td>
+
+<td>
+
+<span class="status completed">
+
+Active
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>#1011</td>
+
+<td>Olivia Taylor</td>
+
+<td>olivia@email.com</td>
+
+<td>+962790000011</td>
+
+<td>6</td>
+
+<td>$510</td>
+
+<td>
+
+<span class="status completed">
+
+Active</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= Customer Statistics ================= -->
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>1,248</h2>
+
+<p>Total Customers</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h2>1,032</h2>
+
+<p>Active Customers</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<h2>87</h2>
+
+<p>New This Month</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+<h2>$96,500</h2>
+
+<p>Total Customer Revenue</p>
+
+</div>
+
+</section>
+
+<!-- ================= Pagination ================= -->
+
+<section class="pagination">
+
+<button>
+
+<i class="fa-solid fa-angle-left"></i>
+
+</button>
+
+<button class="active">1</button>
+
+<button>2</button>
+
+<button>3</button>
+
+<button>4</button>
+
+<button>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</button>
+
+</section>
+<!-- ================= Customer Details Modal ================= -->
+
+<div class="modal" id="customerModal">
+
+    <div class="modal-content large">
+
+        <div class="modal-header">
+
+            <h2>Customer Details</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <div class="order-info">
+
+            <div class="info-box">
+
+                <h3>Personal Information</h3>
+
+                <p><strong>Name:</strong> Ahmed Ali</p>
+                <p><strong>Email:</strong> ahmed@email.com</p>
+                <p><strong>Phone:</strong> +962790000001</p>
+                <p><strong>Country:</strong> Jordan</p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Account Summary</h3>
+
+                <p><strong>Total Orders:</strong> 15</p>
+                <p><strong>Total Spent:</strong> $1,250</p>
+                <p><strong>Status:</strong> Active</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Edit Customer ================= -->
+
+<div class="modal" id="editCustomerModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Customer</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <form class="settings-form">
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input type="text" value="Ahmed Ali">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input type="email" value="ahmed@email.com">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Phone</label>
+
+                <input type="text" value="+962790000001">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select>
+
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+
+                </select>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button class="primary-btn">
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= Delete Customer ================= -->
+
+<div class="modal" id="deleteCustomerModal">
+
+    <div class="modal-content small">
+
+        <h2>Delete Customer</h2>
+
+        <p>
+
+            Are you sure you want to permanently delete this customer?
+
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="delete-btn">
+
+                Delete
+
+            </button>
+
+            <button class="secondary-btn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 WQ Wholesale Admin Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
