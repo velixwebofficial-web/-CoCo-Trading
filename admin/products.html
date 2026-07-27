@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>WQ Admin</h2>
+
+</div>
+
+<ul>
+
+<li data-href="dashboard.html" style="cursor:pointer;">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li data-href="products.html" class="active" style="cursor:pointer;">
+<i class="fa-solid fa-box"></i>
+Products
+</li>
+
+<li data-href="orders.html" style="cursor:pointer;">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+<li data-href="messages.html" style="cursor:pointer;">
+<i class="fa-solid fa-envelope"></i>
+Messages
+</li>
+
+<li data-href="customers.html" style="cursor:pointer;">
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li data-href="settings.html" style="cursor:pointer;">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li id="logoutBtn" style="cursor:pointer;">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="search">
+
+<input
+type="text"
+id="productSearch"
+placeholder="Search Products..."
+>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Page Header ================= -->
+
+<section class="page-title">
+
+<div>
+
+<h1>Products</h1>
+
+<p>Manage the products shown on the public website. Changes appear on the site immediately.</p>
+
+</div>
+
+<button class="primary-btn" id="openAddModal">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Product
+
+</button>
+
+</section>
+
+<!-- ================= Filters ================= -->
+
+<section class="filters">
+
+<input
+type="text"
+id="filterSearch"
+placeholder="Search product..."
+>
+
+<select id="filterCategory">
+
+<option value="">All Categories</option>
+<option value="mens-underwear">Men's Underwear</option>
+<option value="womens-underwear">Women's Underwear</option>
+<option value="womens-socks">Women's Socks</option>
+<option value="mens-socks">Men's Socks</option>
+<option value="bras">Bras</option>
+<option value="boys-socks">Boys' Socks</option>
+<option value="girls-socks">Girls' Socks</option>
+
+</select>
+
+<select id="filterStatus">
+
+<option value="">All Status</option>
+
+<option value="active">Active</option>
+
+<option value="inactive">Inactive (hidden from site)</option>
+
+</select>
+
+<button type="button" id="applyFiltersBtn">
+
+Filter
+
+</button>
+
+</section>
+
+<!-- ================= Products Table ================= -->
+
+<section class="panel">
+
+<div class="panel-header">
+
+<h2>Products List</h2>
+
+</div>
+
+<table class="products-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Image</th>
+
+<th>Name</th>
+
+<th>Category</th>
+
+<th>MOQ</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productsTableBody">
+
+<tr><td colspan="7">Loading products...</td></tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= Add / Edit Product Modal ================= -->
+
+<div class="modal" id="addProductModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="productModalTitle">Add Product</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <form class="product-form" id="productForm">
+
+            <input type="hidden" id="productId">
+
+            <div class="form-group">
+
+                <label>Product Name</label>
+
+                <input type="text" id="productName" placeholder="Enter Product Name" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <select id="productCategory" required>
+
+                    <option value="mens-underwear">Men's Underwear</option>
+                    <option value="womens-underwear">Women's Underwear</option>
+                    <option value="womens-socks">Women's Socks</option>
+                    <option value="mens-socks">Men's Socks</option>
+                    <option value="bras">Bras</option>
+                    <option value="boys-socks">Boys' Socks</option>
+                    <option value="girls-socks">Girls' Socks</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea id="productDescription" rows="3" placeholder="Materials, colors, sizes, packaging..."></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>MOQ (Minimum Order Quantity)</label>
+
+                <input type="text" id="productMoq" placeholder="e.g. 500 pcs / By quotation">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Lead Time</label>
+
+                <input type="text" id="productLeadTime" placeholder="e.g. 15-20 days">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Packaging</label>
+
+                <input type="text" id="productPackaging" placeholder="e.g. Standard / Custom">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Shipping</label>
+
+                <input type="text" id="productShipping" placeholder="e.g. Worldwide">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="productStatus">
+
+                    <option value="active">Active (visible on site)</option>
+                    <option value="inactive">Inactive (hidden from site)</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Product Image</label>
+
+                <input type="file" id="productImage" accept="image/png,image/jpeg,image/webp">
+
+                <p style="font-size:12px;color:var(--text-light,#888);margin-top:6px;">Leave empty to keep the current image (or use the category's default photo for a new product).</p>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button type="submit" class="primary-btn">
+
+                    Save Product
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= Delete Modal ================= -->
+
+<div class="modal" id="deleteModal">
+
+    <div class="modal-content small">
+
+        <h2>Delete Product</h2>
+
+        <p>
+
+            Are you sure you want to delete this product? This cannot be undone.
+
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="delete-btn" id="confirmDeleteBtn">
+
+                Delete
+
+            </button>
+
+            <button class="secondary-btn close-modal">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 CoCo Trading Admin Dashboard
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+<script src="js/products-admin.js"></script>
+
+</body>
+
+</html>
