@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>WQ Admin</h2>
+
+</div>
+
+<ul>
+
+<li data-href="dashboard.html" class="active" style="cursor:pointer;">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li data-href="products.html" style="cursor:pointer;">
+<i class="fa-solid fa-box"></i>
+Products
+</li>
+
+<li data-href="orders.html" style="cursor:pointer;">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+<li data-href="messages.html" style="cursor:pointer;">
+<i class="fa-solid fa-envelope"></i>
+Messages
+</li>
+
+<li data-href="customers.html" style="cursor:pointer;">
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li data-href="settings.html" style="cursor:pointer;">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li id="logoutBtn" style="cursor:pointer;">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<!-- ================= Topbar ================= -->
+
+<header class="topbar">
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Search..."
+>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Title ================= -->
+
+<section class="page-title">
+
+<h1>Dashboard</h1>
+
+<p>
+
+Welcome back 👋
+
+</p>
+
+</section>
+
+<!-- ================= Statistics ================= -->
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-box"></i>
+
+<h2 id="statTotalProducts">0</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h2 id="statTotalOrders">0</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2 id="statTotalCustomers">0</h2>
+
+<p>Customers</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-dollar-sign"></i>
+
+<h2 id="statTotalRevenue">0.00 JD</h2>
+
+<p>Total Revenue</p>
+
+</div>
+
+</section>
+<!-- ================= Revenue & Orders ================= -->
+
+<section class="dashboard-content">
+
+    <div class="left-content">
+
+        <!-- Revenue Chart -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>Revenue Overview</h2>
+
+                <button>Last 30 Days</button>
+
+            </div>
+
+            <div class="chart-placeholder">
+
+                <h1 id="revenueHeadline">0.00 JD</h1>
+
+                <p>Total revenue from all non-cancelled orders.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Latest Orders -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>Latest Orders</h2>
+
+                <a href="orders.html">View All</a>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Order ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Status</th>
+
+                        <th>Total</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="latestOrdersBody">
+
+                    <tr><td colspan="4">Loading...</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= Right Sidebar ================= -->
+
+    <div class="right-content">
+
+        <!-- Recent Customers -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>Recent Customers</h2>
+
+            </div>
+
+            <div id="recentCustomersList">
+
+                <div class="customer"><div><p>Loading...</p></div></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= Sales Analytics ================= -->
+
+<section class="analytics">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Sales Analytics</h2>
+
+        </div>
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                <h3 id="statPendingOrders">0</h3>
+
+                <p>Pending Orders</p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <i class="fa-solid fa-check-double"></i>
+
+                <h3 id="statActiveProducts">0</h3>
+
+                <p>Active Products</p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <i class="fa-solid fa-cart-plus"></i>
+
+                <h3 id="statTotalOrders2">0</h3>
+
+                <p>Total Orders</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= Quick Actions ================= -->
+
+<section class="quick-actions">
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>Quick Actions</h2>
+
+        </div>
+
+        <div class="actions">
+
+            <button class="action-btn" onclick="window.location.href='products.html'">
+                <i class="fa-solid fa-plus"></i>
+                Add Product
+            </button>
+
+            <button class="action-btn" onclick="window.location.href='products.html'">
+                <i class="fa-solid fa-box"></i>
+                Manage Products
+            </button>
+
+            <button class="action-btn" onclick="window.location.href='orders.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                View Orders
+            </button>
+
+            <button class="action-btn" onclick="window.location.href='customers.html'">
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 CoCo Trading Admin Dashboard.
+
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

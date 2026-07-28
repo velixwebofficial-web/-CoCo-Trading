@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>WQ Admin</h2>
+
+</div>
+
+<ul>
+
+<li data-href="dashboard.html" style="cursor:pointer;">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</li>
+
+<li data-href="products.html" style="cursor:pointer;">
+
+<i class="fa-solid fa-box"></i>
+
+Products
+
+</li>
+
+<li data-href="orders.html" class="active" style="cursor:pointer;">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Orders
+
+</li>
+
+<li data-href="messages.html" style="cursor:pointer;">
+
+<i class="fa-solid fa-envelope"></i>
+
+Messages
+
+</li>
+
+<li data-href="customers.html" style="cursor:pointer;">
+
+<i class="fa-solid fa-users"></i>
+
+Customers
+
+</li>
+
+<li data-href="settings.html" style="cursor:pointer;">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</li>
+
+<li id="logoutBtn" style="cursor:pointer;">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="search">
+
+<input type="text" placeholder="Search Orders...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png" alt="Admin">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Title ================= -->
+
+<section class="page-title">
+
+<div>
+
+<h1>Orders</h1>
+
+<p>
+
+Manage customer orders and shipping.
+
+</p>
+
+</div>
+
+<button class="primary-btn" id="exportOrdersBtn">
+
+<i class="fa-solid fa-file-export"></i>
+
+Export Orders
+
+</button>
+
+</section>
+
+<!-- ================= Filters ================= -->
+
+<section class="filters">
+
+<input
+type="text"
+id="orderSearch"
+placeholder="Order ID or customer name..."
+>
+
+<select id="orderStatusFilter">
+
+<option value="">All Status</option>
+
+<option value="pending">Pending</option>
+
+<option value="processing">Processing</option>
+
+<option value="shipping">Shipping</option>
+
+<option value="completed">Completed</option>
+
+<option value="cancelled">Cancelled</option>
+
+</select>
+
+<button type="button" id="applyOrderFiltersBtn">
+
+Apply Filter
+
+</button>
+
+</section>
+
+<!-- ================= Orders Table ================= -->
+
+<section class="panel">
+
+<div class="panel-header">
+
+<h2>
+
+Orders List
+
+</h2>
+
+</div>
+
+<table class="products-table">
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Date</th>
+
+<th>Items</th>
+
+<th>Total</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTableBody">
+
+<tr><td colspan="7">Loading orders...</td></tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= Order Details Modal ================= -->
+
+<div class="modal" id="orderModal">
+
+    <div class="modal-content large">
+
+        <div class="modal-header">
+
+            <h2>Order Details <span id="orderModalId"></span></h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <div class="order-info">
+
+            <div class="info-box">
+
+                <h3>Customer Information</h3>
+
+                <p><strong>Name:</strong> <span id="orderCustomerName"></span></p>
+                <p><strong>Email:</strong> <span id="orderCustomerEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="orderCustomerPhone"></span></p>
+                <p><strong>Country:</strong> <span id="orderCustomerCountry"></span></p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Shipping Address</h3>
+
+                <p id="orderShippingAddress"></p>
+                <p id="orderNotes"></p>
+
+            </div>
+
+        </div>
+
+        <table class="products-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="orderItemsBody">
+
+            </tbody>
+
+        </table>
+
+        <div class="invoice-total">
+
+            <h2>Total : <span id="orderModalTotal"></span></h2>
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <label style="margin-right:auto;">
+                <span style="display:block;font-size:13px;margin-bottom:4px;">Update status</span>
+                <select id="orderStatusSelect">
+                    <option value="pending">Pending</option>
+                    <option value="processing">Processing</option>
+                    <option value="shipping">Shipping</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </label>
+
+            <button class="primary-btn" id="saveOrderStatusBtn">Save Status</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 CoCo Trading Admin Dashboard
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+<script src="js/orders-admin.js"></script>
+
+</body>
+
+</html>

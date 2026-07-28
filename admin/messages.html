@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Messages | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>WQ Admin</h2>
+</div>
+
+<ul>
+
+<li data-href="dashboard.html" style="cursor:pointer;">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li data-href="products.html" style="cursor:pointer;">
+<i class="fa-solid fa-box"></i>
+Products
+</li>
+
+<li data-href="orders.html" style="cursor:pointer;">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+<li data-href="messages.html" class="active" style="cursor:pointer;">
+<i class="fa-solid fa-envelope"></i>
+Messages
+</li>
+
+<li data-href="customers.html" style="cursor:pointer;">
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li data-href="settings.html" style="cursor:pointer;">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li id="logoutBtn" style="cursor:pointer;">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Search Messages..."
+>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png" alt="Admin">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Page Title ================= -->
+
+<section class="page-title">
+
+<div>
+
+<h1>Customer Messages</h1>
+
+<p>
+
+Read and reply to customer inquiries.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= Messages ================= -->
+
+<section class="panel">
+
+<div class="panel-header">
+
+<h2>Inbox</h2>
+
+</div>
+
+<table class="products-table">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Subject</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Ahmed Ali</td>
+
+<td>ahmed@email.com</td>
+
+<td>Website Inquiry</td>
+
+<td>23 Jul 2026</td>
+
+<td>
+
+<span class="status pending">
+
+Unread
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>John Smith</td>
+
+<td>john@email.com</td>
+
+<td>Order Question</td>
+
+<td>22 Jul 2026</td>
+
+<td>
+
+<span class="status completed">
+
+Read
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Sarah Lee</td>
+
+<td>sarah@email.com</td>
+
+<td>Shipping</td>
+
+<td>22 Jul 2026</td>
+
+<td>
+
+<span class="status pending">
+
+Unread
+
+</span>
+
+</td>
+
+<td>
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</td>
+
+</tr>
+<tr>
+
+    <td>Michael Brown</td>
+
+    <td>michael@email.com</td>
+
+    <td>Payment Issue</td>
+
+    <td>21 Jul 2026</td>
+
+    <td>
+
+        <span class="status completed">
+
+            Read
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Emily Johnson</td>
+
+    <td>emily@email.com</td>
+
+    <td>Refund Request</td>
+
+    <td>20 Jul 2026</td>
+
+    <td>
+
+        <span class="status pending">
+
+            Unread
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>David Wilson</td>
+
+    <td>david@email.com</td>
+
+    <td>Bulk Purchase</td>
+
+    <td>20 Jul 2026</td>
+
+    <td>
+
+        <span class="status completed">
+
+            Read
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Ali Hassan</td>
+
+    <td>ali@email.com</td>
+
+    <td>Shipping Delay</td>
+
+    <td>19 Jul 2026</td>
+
+    <td>
+
+        <span class="status pending">
+
+            Unread
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Jessica White</td>
+
+    <td>jessica@email.com</td>
+
+    <td>Partnership</td>
+
+    <td>18 Jul 2026</td>
+
+    <td>
+
+        <span class="status completed">
+
+            Read
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Mohammed Saleh</td>
+
+    <td>m.saleh@email.com</td>
+
+    <td>Website Error</td>
+
+    <td>18 Jul 2026</td>
+
+    <td>
+
+        <span class="status pending">
+
+            Unread
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Lucas Martin</td>
+
+    <td>lucas@email.com</td>
+
+    <td>Discount Offer</td>
+
+    <td>17 Jul 2026</td>
+
+    <td>
+
+        <span class="status completed">
+
+            Read
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+<tr>
+
+    <td>Olivia Taylor</td>
+
+    <td>olivia@email.com</td>
+
+    <td>Product Availability</td>
+
+    <td>16 Jul 2026</td>
+
+    <td>
+
+        <span class="status pending">
+
+            Unread
+
+        </span>
+
+    </td>
+
+    <td>
+
+        <button class="edit-btn">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= Message Statistics ================= -->
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h2>248</h2>
+
+<p>Total Messages</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-envelope-open"></i>
+
+<h2>64</h2>
+
+<p>Unread</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-reply"></i>
+
+<h2>171</h2>
+
+<p>Replied</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-box-archive"></i>
+
+<h2>13</h2>
+
+<p>Archived</p>
+
+</div>
+
+</section>
+
+<!-- ================= Pagination ================= -->
+
+<section class="pagination">
+
+<button>
+
+<i class="fa-solid fa-angle-left"></i>
+
+</button>
+
+<button class="active">1</button>
+
+<button>2</button>
+
+<button>3</button>
+
+<button>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</button>
+
+</section>
+<!-- ================= View Message Modal ================= -->
+
+<div class="modal" id="messageModal">
+
+    <div class="modal-content large">
+
+        <div class="modal-header">
+
+            <h2>Message Details</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <div class="message-details">
+
+            <div class="info-box">
+
+                <h3>Sender Information</h3>
+
+                <p><strong>Name:</strong> Ahmed Ali</p>
+                <p><strong>Email:</strong> ahmed@email.com</p>
+                <p><strong>Phone:</strong> +962790000000</p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Subject</h3>
+
+                <p>Website Inquiry</p>
+
+            </div>
+
+        </div>
+
+        <div class="message-content">
+
+            <h3>Message</h3>
+
+            <p>
+
+                Hello, I would like to know more about your wholesale
+                pricing and shipping options. Please contact me as soon
+                as possible.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Reply Modal ================= -->
+
+<div class="modal" id="replyModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Reply to Customer</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <form>
+
+            <div class="form-group">
+
+                <label>Reply</label>
+
+                <textarea rows="8"
+                placeholder="Write your reply..."></textarea>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button class="primary-btn">
+
+                    Send Reply
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= Delete Message ================= -->
+
+<div class="modal" id="deleteMessageModal">
+
+    <div class="modal-content small">
+
+        <h2>Delete Message</h2>
+
+        <p>
+
+            Are you sure you want to delete this message?
+
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="delete-btn">
+
+                Delete
+
+            </button>
+
+            <button class="secondary-btn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 CoCo Trading Admin Dashboard
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

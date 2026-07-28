@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customers | WQ Admin</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<h2>WQ Admin</h2>
+</div>
+
+<ul>
+
+<li data-href="dashboard.html" style="cursor:pointer;">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</li>
+
+<li data-href="products.html" style="cursor:pointer;">
+<i class="fa-solid fa-box"></i>
+Products
+</li>
+
+<li data-href="orders.html" style="cursor:pointer;">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</li>
+
+<li data-href="customers.html" style="cursor:pointer;">
+<i class="fa-solid fa-users"></i>
+Customers
+</li>
+
+<li data-href="messages.html" style="cursor:pointer;">
+<i class="fa-solid fa-envelope"></i>
+Messages
+</li>
+
+<li data-href="settings.html" style="cursor:pointer;">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li id="logoutBtn" style="cursor:pointer;">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+<header class="topbar">
+
+<div class="search">
+
+<input type="text" placeholder="Search Customers...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="../assets/logo.png" alt="Admin">
+
+<div>
+
+<h4>Administrator</h4>
+
+<p>Super Admin</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Page Title ================= -->
+
+<section class="page-title">
+
+<div>
+
+<h1>Customers</h1>
+
+<p>
+
+Automatically built from real customer orders — no manual entry needed.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= Customers Table ================= -->
+
+<section class="panel">
+
+<div class="panel-header">
+
+<h2>Customers List</h2>
+
+</div>
+
+<table class="products-table">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Orders</th>
+
+<th>Total Spent</th>
+
+<th>Last Order</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="customersTableBody">
+
+<tr><td colspan="7">Loading customers...</td></tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= Customer Statistics ================= -->
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2 id="statCustTotal">0</h2>
+
+<p>Total Customers</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<h2 id="statCustNewMonth">0</h2>
+
+<p>New This Month</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h2 id="statCustOrders">0</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+<h2 id="statCustRevenue">0.00 JD</h2>
+
+<p>Total Customer Revenue</p>
+
+</div>
+
+</section>
+
+<!-- ================= Customer Details Modal ================= -->
+
+<div class="modal" id="customerModal">
+
+    <div class="modal-content large">
+
+        <div class="modal-header">
+
+            <h2>Customer Details</h2>
+
+            <button class="close-modal">&times;</button>
+
+        </div>
+
+        <div class="order-info">
+
+            <div class="info-box">
+
+                <h3>Personal Information</h3>
+
+                <p><strong>Name:</strong> <span id="custName"></span></p>
+                <p><strong>Email:</strong> <span id="custEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="custPhone"></span></p>
+                <p><strong>Country:</strong> <span id="custCountry"></span></p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Account Summary</h3>
+
+                <p><strong>Total Orders:</strong> <span id="custOrdersCount"></span></p>
+                <p><strong>Total Spent:</strong> <span id="custTotalSpent"></span></p>
+                <p><strong>Last Order:</strong> <span id="custLastOrder"></span></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer class="admin-footer">
+
+    <p>
+
+        © 2026 CoCo Trading Admin Dashboard. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+<script src="js/customers-admin.js"></script>
+
+</body>
+
+</html>
